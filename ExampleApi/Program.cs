@@ -11,7 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ContactsApiDbContext>(options => options.UseInMemoryDatabase("contactsDb"));
+//this one for inmemorydb
+//builder.Services.AddDbContext<ContactsApiDbContext>(options => options.UseInMemoryDatabase("contactsDb"));
+//this is for sql
+builder.Services.AddDbContext<ContactsApiDbContext>
+    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
