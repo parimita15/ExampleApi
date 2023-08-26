@@ -41,7 +41,7 @@ namespace ExampleApi.Controllers
                 }
                 return Ok(contact);
             }
-        }
+        } 
 
         [HttpPost]
 
@@ -94,7 +94,8 @@ namespace ExampleApi.Controllers
 
             return BadRequest("notfound");
 
-        }
+        }        
+         
 
 
         //delete
